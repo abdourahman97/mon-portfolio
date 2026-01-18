@@ -1,0 +1,893 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Vidéo d'arrière-plan */
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Overlay de contenu */
+.content-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+nav {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+nav a.active {
+    color: #f1c40f;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+/* Contenu principal */
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Sections communes */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+h2{
+    color :rgb(248, 83, 7);
+      font-size: 25px;
+  }
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+/* À propos */
+.about-section {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1rem auto;
+    border: 5px solid #f1c40f;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skills-list li {
+    background: rgba(241, 196, 15, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Portfolio */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1rem 1rem 0;
+}
+
+.project-card p {
+    padding: 0 1rem 1rem;
+    color: #ddd;
+}
+
+.project-card .btn {
+    margin: 0 1rem 1rem;
+    display: block;
+    text-align: center;
+}
+
+/* Contact */
+.contact-section {
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Styles pour la page mémoire */
+.memoire-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+/* Styles pour les documents */
+.documents-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.document-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.document-btn {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.document-btn:hover {
+    background: #2ecc71;
+}
+
+/* Version mobile */
+@media (max-width: 600px) {
+    .documents-section {
+        grid-template-columns: 1fr;
+    }
+}
+.download-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.file-size {
+    display: block;
+    margin-top: 0.5rem;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+
+.site-footer {
+    background-color: #1a1a1a; /* Un gris très foncé, pro pour la cybersécurité */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #00a8ff; /* Une touche de bleu "tech" */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.footer-tagline {
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.hero-section {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.badge {
+    background: rgba(0, 168, 255, 0.2);
+    color: #00a8ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 20px 0;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+
+.btn-primary {
+    background: #00a8ff;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    border: 2px solid #94a3b8;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* BOUTON 3 : LE MÉLANGE DE COULEURS PRO (Certifications) */
+.btn-cert {
+    /* Mélange de Bleu Cyber, Violet et Indigo */
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+/* Effets au survol du bouton Certifications */
+.btn-cert:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Animation de pulse discret pour attirer l'attention sur les certifs */
+.btn-cert {
+    animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(168, 85, 247, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+}
+
+/* Hover des autres boutons pour la cohérence */
+.btn-primary:hover { background: #0086cc; transform: translateY(-3px); }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+
+/* Palette de couleurs professionnelles */
+:root {
+    --bg-dark: #0f172a;        /* Bleu nuit profond */
+    --card-bg: #1e293b;        /* Bleu ardoise pour les cartes */
+    --accent-blue: #38bdf8;    /* Bleu tech éclatant */
+    --accent-green: #10b981;   /* Vert sécurité/émeraude */
+    --text-white: #f8fafc;     /* Blanc cassé pour le texte */
+    --text-dim: #94a3b8;       /* Gris bleuté pour les descriptions */
+}
+
+.projects-section {
+    padding: 100px 0;
+    background-color: var(--bg-dark); /* Fond sombre pro */
+    font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-white);
+    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Soulignement stylisé sous le titre */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-blue);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Bordure très subtile */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet au survol */
+.project-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Dégradé discret au survol */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.project-card h3 {
+    color: var(--text-white);
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Tags stylisés "Cyber" */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: rgba(56, 189, 248, 0.1); /* Fond bleu transparent */
+    color: var(--accent-blue);
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Couleur alternative pour les tags de sécurité */
+.tags span.security-tag {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent-green);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+
+/* Section Certifications */
+.cert-section {
+    padding: 100px 0;
+    background-color: #0f172a; /* Fond sombre pour faire ressortir les couleurs */
+    color: white;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Style de la carte */
+.cert-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Effet spécial sur la carte Master (Mention Bien) */
+.master-card {
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.05);
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #6366f1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.cert-badge {
+    font-size: 2.8rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.cert-info h3 {
+    font-size: 1.15rem;
+    color: #f8fafc;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.institution {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+/* Le fameux mélange de couleurs pour la Mention Bien */
+.highlight-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.cert-date {
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+/* Styles généraux des sections */
+.section { padding: 80px 0; }
+.bg-light { background-color: #f1f5f9; color: #1e293b; }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #0f172a; }
+
+/* Timeline Parcours */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 3px solid #38bdf8;
+    padding-left: 30px;
+}
+.timeline-item { margin-bottom: 30px; position: relative; }
+.timeline h3 { margin: 40px 0 20px -30px; color: #6366f1; }
+
+/* Compétences */
+.skills-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.skills-column {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    width: 45%;
+    min-width: 300px;
+}
+.skills-column ul { list-style: none; }
+.skills-column li { margin-bottom: 10px; font-weight: 500; }
+
+/* Vision d'avenir */
+.vision-avenir {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    text-align: center;
+}
+.vision-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cbd5e1;
+}
+
+/* Annexe */
+.annexe-content { text-align: center; }
+
+/* Section Documents avec fond sombre pour faire ressortir les couleurs */
+.docs-section {
+    padding: 100px 0;
+    background-color: #0f172a;
+    color: white;
+}
+
+.section-title {
+    color: white; /* Titre très sombre pour le contraste */
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Style de base de la carte */
+.doc-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mélanges de couleurs par type de carte au survol */
+.card-cv:hover { border-color: #6366f1; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2); }
+.card-pfe:hover { border-color: #a855f7; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2); }
+.card-lm:hover { border-color: #10b981; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); }
+
+.doc-icon-wrapper {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.doc-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #f8fafc;
+}
+
+.doc-content p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Bouton principal avec dégradé mélangé */
+.btn-mixed {
+    flex-grow: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    /* Dégradé par défaut */
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* Couleurs spécifiques des boutons au survol */
+.card-cv .btn-mixed:hover { background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%); }
+.card-pfe .btn-mixed:hover { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); }
+.card-lm .btn-mixed:hover { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); }
+
+.doc-footer {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.btn-icon-dl {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-icon-dl:hover {
+    background: white;
+    color: #0f172a;
+}
+
+.contact-section {
+    padding: 100px 0;
+    background-color: #1e293b; /* Blanc très foncé */
+    color: white;
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 50px;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.info-text h4 {
+    margin: 0;
+    color: #38bdf8;
+    font-size: 1.1rem;
+}
+
+.info-text a, .info-text p {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* La carte d'appel à l'action avec dégradé mélangé */
+.cta-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(180px);
+}
+
+.btn-mixed-large {
+    display: inline-block;
+    margin-top: 13px;
+    padding: 5px 100px;
+    border-radius: 20px;
+    background: linear-gradient(125deg, #6366f1 0%, #a855f7 50%, #10b981 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+    transition: 0.3s;
+}
+
+.btn-mixed-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 30px rgba(168, 85, 247, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

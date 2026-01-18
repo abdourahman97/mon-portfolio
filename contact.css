@@ -1,0 +1,149 @@
+/* Centrage vertical et horizontal */
+.contact-module {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none; /* Pas de fond ici, style global ailleurs */
+}
+
+/* Conteneur petit et flou */
+.contact-module .contact-container {
+  width: 320px;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* Titres */
+.contact-module h1 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Formulaire en colonne */
+.contact-module form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Labels */
+.contact-module label {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Inputs et textarea */
+.contact-module input,
+.contact-module textarea {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  resize: vertical;
+}
+
+.contact-module input::placeholder,
+.contact-module textarea::placeholder {
+  color: #ccc;
+}
+
+/* Bouton glow multicolore */
+.contact-module .glow-button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    #ff0057,
+    #00f2ff,
+    #8aff00,
+    #ff0057
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 4s ease infinite;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: filter 0.3s ease;
+}
+
+.contact-module .glow-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ffffff55, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.contact-module .glow-button:active::before {
+  opacity: 1;
+  animation: clickEffect 0.6s ease-out;
+}
+
+/* Message de retour */
+.contact-module #formMessage {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #00ffcc;
+}
+
+.contact-module .hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .contact-module .contact-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
